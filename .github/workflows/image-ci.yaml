@@ -13,20 +13,17 @@ jobs:
     outputs:
       image_tag: ${{ steps.generate-image-tag.outputs.image_tag }}
     steps:
-      # Checkout the code
       - name: Checkout
         uses: actions/checkout@v6
         with:
           # Necessary to get all tags for IMAGE_TAG generation with git describe
           fetch-depth: 0
 
-      # Install task
       - name: Install Task
         uses: arduino/setup-task@v2
         with:
           version: 3.x
 
-      # Generate image tag
       - name: Generate Image Tag
         id: generate-image-tag
         working-directory: .github/actions
