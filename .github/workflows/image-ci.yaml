@@ -97,7 +97,7 @@ jobs:
           version: 3.x
 
       - name: Update Image Tags
-        working-directory: .github/actions/github-actions
+        working-directory: .github/actions/
         env:
           IMAGE_TAG: ${{ needs.generate-image-tag.outputs.image_tag }}
         run: |
