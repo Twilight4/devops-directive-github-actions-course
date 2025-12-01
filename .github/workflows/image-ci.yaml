@@ -75,7 +75,7 @@ jobs:
         with:
           version: v0.15.4
 
-      - name: Build Image
+      - name: Build and Push Docker Images to Docker Hub
         env:
           IMAGE_TAG: ${{ needs.generate-image-tag.outputs.image_tag }}    # pull in that image tag from the previous job
         working-directory: ${{ matrix.path }}                             # working directory of the path of the copy of this job
