@@ -34,5 +34,7 @@ jobs:
           image_tag=$(task generate-version-tag)
           echo "image_tag=$image_tag" >> $GITHUB_OUTPUT
 
-
+  build-tag-push:
+    runs-on: ubuntu-latest
+    needs: generate-image-tag              # this job won't run until the 
 
